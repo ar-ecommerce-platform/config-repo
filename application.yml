@@ -1,0 +1,5 @@
+ecommerce:
+  config: loaded
+
+info:
+  note: "Work in progress - config values will be added as microservices are built."
