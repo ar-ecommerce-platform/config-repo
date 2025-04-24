@@ -86,5 +86,3 @@ This project is evolving its approach to secrets management. Here's how it's han
 ## 📬 Contact
 
 Maintained by [Alexis Rodriguez](https://github.com/AlexisRodriguezCS)
-
----
