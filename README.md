@@ -1,4 +1,4 @@
-# Config Repo – E-commerce Backend
+# 🗂️ Config Repo – E-commerce Backend
 
 This repository stores configuration files for all microservices in the e-commerce backend.  
 It works with the Spring Cloud Config Server to deliver the right config values to each service at runtime.
