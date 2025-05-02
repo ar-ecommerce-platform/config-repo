@@ -41,11 +41,6 @@ spring:
     import: optional:configserver:http://localhost:8888
 ```
 
-At startup, services load:
-- The global `application.yml`
-- Their own `application.yml`
-- Their active profile overrides (e.g., `auth-service-dev.yml`)
-
 The Config Server fetches configuration from this repo and delivers it to the services.
 
 ---
@@ -105,7 +100,7 @@ When a microservice (e.g., `auth-service`) starts up, it retrieves its configura
    It sends a configuration request to the Config Server (e.g., `http://localhost:8888/auth-service/dev`).
 
 3. **Config Server Bootstraps**  
-   The Config Server reads its own `bootstrap.yml`, which points to this Git repo (`ecommerce-config-repo`) as the source of truth.
+   The Config Server reads its own `bootstrap.yml`, which points to this Git repo (`ecommerce-config-repo`).
 
 4. **Git Repository Fetched**  
    The Config Server clones or pulls this repository.
