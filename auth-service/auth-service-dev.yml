@@ -1,0 +1,12 @@
+server:
+  port: 8801
+
+spring:
+  datasource:
+    url: jdbc:postgresql://auth-postgres:5432/authdb
+    username: authuser
+    password: authpass
+
+  rabbitmq:
+    host: localhost
+    port: 5672
