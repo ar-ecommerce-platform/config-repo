@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: notification-service
+    activate:
+      on-profile: default
