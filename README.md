@@ -11,7 +11,7 @@ Each environment (like `dev`, `test`, or `prod`) can have its own settings — m
 ```
 ecommerce-config-repo/
 ├── auth-service/
-│   ├── application.yml             # Common configuration for auth service
+│   ├── auth-service.yml             # Common configuration for auth service
 │   ├── auth-service-dev.yml        # Dev-specific configuration for auth service
 │   └── auth-service-prod.yml       # Prod-specific configuration for auth service
 │
@@ -56,7 +56,7 @@ GET http://localhost:8888/auth-service/dev
 The following files are merged in order:
 
 1. `application.yml` (global)
-2. `auth-service/application.yml`
+2. `auth-service/auth-service.yml`
 3. `auth-service/auth-service-dev.yml`
 
 ---
@@ -75,7 +75,7 @@ The following files are merged in order:
 | File                                    | Purpose                                  |
 |-----------------------------------------|------------------------------------------|
 | `application.yml` (root)                | Global shared settings for all services  |
-| `{service-name}/application.yml`        | Default settings per service             |
+| `{service-name}/{service-name}.yml`        | Default settings per service             |
 | `{service-name}/{service-name}-dev.yml` | Dev environment overrides                |
 | `{service-name}/{service-name}-prod.yml`| Prod environment overrides               |
 
@@ -109,7 +109,7 @@ When a microservice (e.g., `auth-service`) starts up, it retrieves its configura
    The root-level `application.yml` is always loaded first. This contains shared config (e.g., logging, actuator, tracing) applied to all services.
 
 6. **Service Configuration Loaded**  
-   Then, the service-specific file (`auth-service/application.yml`) is loaded.
+   Then, the service-specific file (`auth-service/auth-service.yml`) is loaded.
 
 7. **Profile-Specific Configuration (Optional)**  
    If a profile is active (like `dev` or `prod`), the corresponding file (`auth-service-dev.yml`) is loaded next.
@@ -138,10 +138,10 @@ flowchart TD
     F --> G{"Is Profile Active?"}
     
     G -->|No| H["Also Load:
-    - 'auth-service/application.yml'"]
+    - 'auth-service/auth-service.yml'"]
     
     G -->|Yes| I["Also Load:
-    - 'auth-service/application.yml'
+    - 'auth-service/auth-service.yml'
     - 'auth-service-dev.yml' or 'auth-service-prod.yml'"]
     
     H --> J["Merge Configs (override order):
