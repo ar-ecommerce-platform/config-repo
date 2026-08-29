@@ -1,5 +1,10 @@
+---
+# Served by config-server (Spring Cloud Config, native backend). Each service also
+# ships a self-contained application.yml, so this file is supplementary.
 spring:
   application:
     name: payment-service
-    activate:
-      on-profile: default
+server:
+  port: 8085
+demo:
+  config-source: config-server
