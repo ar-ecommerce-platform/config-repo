@@ -6,6 +6,10 @@ spring:
     url: jdbc:postgresql://prod-auth-db:5432/authdb
     username: ${AUTH_DB_USERNAME}
     password: ${AUTH_DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
 
   rabbitmq:
     host: rabbitmq.prod.svc.cluster.local
